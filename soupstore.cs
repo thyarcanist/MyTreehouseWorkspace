@@ -1,3 +1,4 @@
+  
 using System;
 using System.Threading;
 
@@ -41,7 +42,8 @@ class Program
    
    static void DiscountCheck(int totalNumber) {
       
-         if (canCount < 54)
+         if (canCount < 54) 
+        {
             Console.WriteLine($"For {canCount} amount of cans, you will not have the discount.");
         }
         else if (canCount >= 55 && canCount < 99) 
@@ -52,7 +54,6 @@ class Program
         {
             Console.WriteLine($"For {canCount} amount of cans, you will have the PREMIER discount.");
         }
-      
    }
     
   
