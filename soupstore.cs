@@ -41,11 +41,11 @@ class Program
         {
             Console.WriteLine($"For {canCount} amount of cans, you will not have the discount.");
         }
-        if (canCount >= 75 && canCount < 99 ) 
+        else if (canCount >= 75 && canCount < 99 ) 
         {
             Console.WriteLine($"For {canCount} amount of cans , you will have the discount.");
         }
-        if (canCount >= 100) 
+        else if (canCount >= 100) 
         {
             Console.WriteLine($"For {canCount} amount of cans, you will have the PREMIER discount.");
         }
