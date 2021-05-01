@@ -1,4 +1,3 @@
-  
 using System;
 using System.Threading;
 
@@ -12,6 +11,11 @@ class Program
       Thread.Sleep(5000);
       Console.WriteLine("Stocking cans...");
       Thread.Sleep(3000);
+  }
+  
+  static void Halt() {
+    Thread.Sleep(5000);
+    Console.WriteLine("OKAY.");
   }
   
    static string Ask(string question)
@@ -42,17 +46,17 @@ class Program
    
    static void DiscountCheck(int totalNumber) {
       
-         if (canCount < 54) 
+         if (totalNumber < 54) 
         {
-            Console.WriteLine($"For {canCount} amount of cans, you will not have the discount.");
+            Console.WriteLine($"For {totalNumber} amount of cans, you will not have the discount.");
         }
-        else if (canCount >= 55 && canCount < 99) 
+        else if (totalNumber >= 55 && totalNumber < 99) 
         {
-            Console.WriteLine($"For {canCount} amount of cans , you will have the discount.");
+            Console.WriteLine($"For {totalNumber} amount of cans , you will have the discount.");
         }
-        else if (canCount >= 100) 
+        else if (totalNumber >= 100) 
         {
-            Console.WriteLine($"For {canCount} amount of cans, you will have the PREMIER discount.");
+            Console.WriteLine($"For {totalNumber} amount of cans, you will have the PREMIER discount.");
         }
    }
     
@@ -67,8 +71,11 @@ class Program
         Console.WriteLine($"You entered {entry} cans.");
         
         int canCount = int.Parse(entry);
-        double total = Price(number);
-        int canCount = DiscountCheck(int.Parse(entry);
+        double total = Price(canCount);
+        int discountVerify = int.Parse(entry);
+        DiscountCheck(discountVerify);
+        Halt();
+        
         Console.WriteLine($"For {entry} cans, you total is: ${total}");
         
     }
